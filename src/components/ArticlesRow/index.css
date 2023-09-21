@@ -1,0 +1,10 @@
+.img-article {
+    width: 100%;
+    height:10vw;
+    object-fit: cover;
+    border-radius:5px;
+}
+
+.description {
+    font-size:14px;
+}
