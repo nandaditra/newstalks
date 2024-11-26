@@ -9,6 +9,7 @@ import News from '../pages/News';
 import Selebrities from '../pages/Selebrities';
 import Sports from '../pages/Sports';
 import Technology from '../pages/Technology';
+import Search from '../pages/Search';
 
 
 function Router(){
@@ -21,6 +22,7 @@ function Router(){
                  <Route path={'/selebrities'} element={<Selebrities />} />
                  <Route path={'/sports'} element={<Sports />} />
                  <Route path={'/technology'} element={<Technology />} />
+                 <Route path={'/search/:keywordId'} element={<Search />} />
              </Routes>
          </BrowserRouter>
         </>  
