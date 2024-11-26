@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import Header from "../../layout/Header";
-import axios from "axios";
 import Articles from "../../components/Articles";
 import PopulerArticle from "../../components/PopulerArticle";
 import "react-loading-skeleton/dist/skeleton.css";
 import ListArticle from "../../components/ListArticle";
 import Footer from "../../layout/Footer";
+import api from "../../api/api";
 
 const Home = () => {
     const [headline, setHeadline] = useState([])
@@ -16,7 +16,7 @@ const Home = () => {
     useEffect(() => {
       async function fetchData() {
          setLoading(true)
-         await axios.get(`https://newsapi.org/v2/everything?q=trending&apiKey=082fa67973a5461cad981bea600133b5`)
+         await api.get(`/everything?q=trending`)
          .then((response)=> {
              if(response) {
                setLoading(false)
@@ -30,7 +30,7 @@ const Home = () => {
       } 
 
       async function getPopulerData() {
-         await axios.get('https://newsapi.org/v2/everything?q=populer&apiKey=082fa67973a5461cad981bea600133b5')
+         await api.get('/everything?q=populer')
           .then((response)=> {
              setPopuler(response.data.articles.splice(1,5))
           })

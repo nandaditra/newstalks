@@ -1,5 +1,5 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import api from "../api/api";
 
 const useFetchData = (key:string, first:number, second:number) => {
      const [article, setArticle] = useState<any[]>([]);
@@ -9,7 +9,7 @@ const useFetchData = (key:string, first:number, second:number) => {
        async function fetchData() {
           setLoading(true);
           try {
-            await axios.get(`https://newsapi.org/v2/everything?q=${key}&apiKey=082fa67973a5461cad981bea600133b5`)
+            await api.get(`/everything?q=${key}`)
               .then((response)=> {
                 if(response) {
                   setLoading(false)
