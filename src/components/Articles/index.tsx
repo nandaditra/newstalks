@@ -1,20 +1,10 @@
 import './index.css'
 import { Article } from "./Article";
-import Skeleton from 'react-loading-skeleton';
-
+import SkeletonArticles from '../Skeleton/SkeletonArticles';
 
 interface ArticleListProps {
     articles: Article[];
     loading: boolean,
-}
-
-const SkeletonArticles = () => {
-    return (
-        <div className="col-6 col-md-2">
-            <Skeleton className="card-skeleton" count={1}/>
-            <Skeleton count={2}/>
-       </div>
-    )
 }
 
 const Articles = ({ articles, loading}:ArticleListProps) => { 
