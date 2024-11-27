@@ -1,4 +1,3 @@
-import Skeleton from "react-loading-skeleton";
 import { Populer } from "./Populer"
 import convertDate from "../../util/convertDate";
 import { Link } from "react-router-dom";
