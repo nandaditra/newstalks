@@ -2,31 +2,15 @@ import Skeleton from "react-loading-skeleton";
 import { Populer } from "./Populer"
 import convertDate from "../../util/convertDate";
 import { Link } from "react-router-dom";
+import SkeletonPopularArticle from "../Skeleton/SkeletonPopularArticle";
 
 interface PopulerListProps {
     populers: Populer[];
     loading:boolean
 }
 
-const SkeletonPopularArticle = () => {
-    return (
-        <div className="mt-1 mb-3">
-            <div className="row">
-                <div className="col-1 mr-3">
-                   <Skeleton className="p-3"count={1} />
-                </div>
-                <div className="col-11">
-                   <Skeleton count={2} />
-                   <Skeleton className="my-2"count={1} />
-                </div>
-            </div>
-        </div>
-    )
-}
 
-
-
-function PopulerArticle({populers, loading}:PopulerListProps){
+const PopulerArticle = ({populers, loading}:PopulerListProps) =>{
     if(loading) {
         return (
            <div>

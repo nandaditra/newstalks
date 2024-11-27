@@ -2,18 +2,7 @@ import Skeleton from "react-loading-skeleton";
 import convertDate from "../../util/convertDate";
 import './index.css'
 import { Link } from "react-router-dom";
-
-class ListArticleModel {
-    id: string | undefined;
-    name: string ="";
-    author: string ="";
-    title: string ="";
-    description: string ="";
-    url: string ="";
-    urlToImage:string ="";
-    publishedAt:string ="";
-    content: string ="";
-}
+import { ListArticleModel } from "./ListArticleModel";
 
 interface ListArticleProps {
     articles:ListArticleModel[]
@@ -22,11 +11,11 @@ interface ListArticleProps {
 
 const ListArticleSkeleton = () => {
     return (
-        <div className="d-flex my-3">
-                <div className="w-25">
+        <div className="row my-3">
+                <div className="col-11 col-md-3">
                     <Skeleton className="d-block w-100 h-100" count={1}/>
                 </div>
-                <div className="w-75 px-2">
+                <div className="col-11 col-md-9 px-2">
                     <Skeleton count={2} />
                     <Skeleton className="w-25" count={1}/>
                     <Skeleton count={2} />
