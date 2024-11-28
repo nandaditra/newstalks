@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`performs snapshot testing 1`] = `
+<header
+  className="sticky-top bg-white"
+>
+  <nav
+    className="container navbar navbar-expand-lg"
+  >
+    <div
+      className="container-fluid"
+    >
+      <a
+        className="mr-0 navbar-brand fw-bold"
+        href="/"
+      >
+        <span
+          className="text-danger"
+        >
+          NEWS
+        </span>
+        <span
+          className="text-primary"
+        >
+          TALK
+        </span>
+      </a>
+      <button
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        className="navbar-toggler"
+        data-bs-target="#navbarSupportedContent"
+        data-bs-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        className="collapse navbar-collapse"
+        id="navbarSupportedContent"
+      >
+        <ul
+          className="navbar-nav ms-auto mb-2 mb-lg-0"
+        >
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link active"
+              href="/"
+            >
+              Trending
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="/news"
+            >
+              News
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="/selebrities"
+            >
+              Selebrities
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="/sports"
+            >
+              Sports
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="/technology"
+            >
+              Technology
+            </a>
+          </li>
+          <form
+            className="d-flex"
+            onSubmit={[Function]}
+            role="search"
+          >
+            <input
+              aria-label="Search"
+              className="form-control me-2"
+              name="search"
+              placeholder="Search"
+              type="search"
+            />
+            <button
+              className="btn btn-primary"
+              type="submit"
+            >
+              Search
+            </button>
+          </form>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+`;
