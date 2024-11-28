@@ -57,25 +57,6 @@ const Home = () => {
                       <h5 className="text-blue fw-semibold mt-2">Trending</h5>
                       <div className="my-2">
                            <ListArticle articles={rowArticle} loading={isLoading}/>
-                           <nav aria-label="Page navigation example">
-                              <ul className="pagination text-center">
-                                    <li className="page-item">
-                                       <a className="page-link" href="/" aria-label="Previous">
-                                          <span aria-hidden="true">&laquo;</span>
-                                       </a>
-                                    </li>
-                                    <li className="page-item"><a className="page-link" href="/">1</a></li>
-                                    <li className="page-item"><a className="page-link" href="?page=2">2</a></li>
-                                    <li className="page-item"><a className="page-link" href="?page=3">3</a></li>
-                                    <li className="page-item"><a className="page-link" href="?page=4">4</a></li>
-                                    <li className="page-item"><a className="page-link" href="?page=5">5</a></li>
-                                    <li className="page-item">
-                                       <a className="page-link" href="/" aria-label="Next">
-                                         <span aria-hidden="true">&raquo;</span>
-                                      </a>
-                                   </li>
-                              </ul>
-                           </nav>
                       </div>
                    </div>
                  </div>
