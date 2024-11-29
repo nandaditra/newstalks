@@ -1,6 +1,4 @@
 import ListArticle from "../../components/ListArticle"
-import Footer from "../../components/Footer";
-import Header from "../../components/Header"
 import useFetchData from "../../hook/useFetchData"
 
 const News = () => {
@@ -8,10 +6,6 @@ const News = () => {
     const {article, loading} = newsArticle
     
     return (
-        <>
-        
-        <Header/>
-
         <main>
             <div className="container">
                  <div className="row">
@@ -21,10 +15,6 @@ const News = () => {
                  </div>
             </div>
         </main>
-
-        <Footer />
-
-        </>
     )
 }
 

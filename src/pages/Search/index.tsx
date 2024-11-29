@@ -1,8 +1,6 @@
 import { useParams } from "react-router-dom"
 import ListArticle from "../../components/ListArticle"
 import useFetchData from "../../hook/useFetchData"
-import Footer from "../../components/Footer";
-import Header from "../../components/Header"
 
 const Search = () => {
    const { keywordId } = useParams()
@@ -11,10 +9,6 @@ const Search = () => {
    const searchArticles = useFetchData(data, 5, 10);
    const {article, loading} = searchArticles
    return (
-     <>
-     
-     <Header />
-
      <main>
            <div className="container"> 
                  <div className="row">
@@ -25,10 +19,6 @@ const Search = () => {
                  </div>
             </div>
      </main>
-
-     <Footer />
-
-     </>
    )
 }
 

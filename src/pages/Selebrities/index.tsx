@@ -1,5 +1,3 @@
-import Footer from "../../components/Footer";
-import Header from "../../components/Header"
 import ListArticle from "../../components/ListArticle";
 import useFetchData from "../../hook/useFetchData";
 
@@ -8,10 +6,6 @@ const Selebrities = () => {
     const {article, loading} = selebritiesArticle
 
     return (
-        <>
-        
-        <Header />
-
         <main>
             <div className="container"> 
                  <div className="row">
@@ -21,11 +15,6 @@ const Selebrities = () => {
                  </div>
             </div>
         </main>
-
-
-        <Footer />
-
-        </>
     )
 }
 
