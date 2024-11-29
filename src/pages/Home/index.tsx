@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Header from "../../layout/Header";
+import Header from "../../components/Header";
 import Articles from "../../components/Articles";
 import "react-loading-skeleton/dist/skeleton.css";
-import Footer from "../../layout/Footer";
+import Footer from "../../components/Footer";
 import api from "../../api/api";
 import Trending from "./Trending";
 import BeritaPopuler from "./BeritaPopuler";

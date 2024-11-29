@@ -1,6 +1,6 @@
 import ListArticle from "../../components/ListArticle"
-import Footer from "../../layout/Footer"
-import Header from "../../layout/Header"
+import Footer from "../../components/Footer"
+import Header from "../../components/Header"
 import useFetchData from "../../hook/useFetchData"
 
 const News = () => {

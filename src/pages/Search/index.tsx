@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom"
 import ListArticle from "../../components/ListArticle"
 import useFetchData from "../../hook/useFetchData"
-import Footer from "../../layout/Footer"
-import Header from "../../layout/Header"
+import Footer from "../../components/Footer";
+import Header from "../../components/Header"
 
 const Search = () => {
    const { keywordId } = useParams()
