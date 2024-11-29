@@ -1,5 +1,5 @@
 import ListArticle from "../../components/ListArticle"
-import Footer from "../../components/Footer"
+import Footer from "../../components/Footer";
 import Header from "../../components/Header"
 import useFetchData from "../../hook/useFetchData"
 
