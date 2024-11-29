@@ -35,7 +35,7 @@ const ListArticle = ({articles, loading}:ListArticleProps) => {
     return (
         <div className="mx-auto px-1">
             {articles.map((article, index)=>  {
-                if(article.title !== "[Removed]" || article.urlToImage !== null) {
+                if(article.title !== "[Removed]" && article.description !== null) {
                     return <Link to={article.url} className="row my-3 text-black text-decoration-none" key={index}>
                            <div className="col-11 col-md-3">
                                <img className="d-block w-100" src={article.urlToImage} alt={article.content}/>
