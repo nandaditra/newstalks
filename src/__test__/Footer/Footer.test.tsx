@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom'
-import Footer from '../../layout/Footer';
+import Footer from "../../components/Footer";
 
 test('renders the "NEWS" message', () => {
   render(<Footer />);
