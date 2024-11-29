@@ -14,8 +14,6 @@ import Search from '../pages/Search';
 
 function Router(){
     return(
-        <>
-          <BrowserRouter>
              <Routes>
                  <Route path={'/'} element={<Home />} />
                  <Route path={'/news'} element={<News />} />
@@ -24,8 +22,6 @@ function Router(){
                  <Route path={'/technology'} element={<Technology />} />
                  <Route path={'/search/:keywordId'} element={<Search />} />
              </Routes>
-         </BrowserRouter>
-        </>  
     )
 }
 
