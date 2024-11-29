@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import Header from "../../layout/Header";
 import Articles from "../../components/Articles";
-import PopulerArticle from "../../components/PopulerArticle";
 import "react-loading-skeleton/dist/skeleton.css";
-import ListArticle from "../../components/ListArticle";
 import Footer from "../../layout/Footer";
 import api from "../../api/api";
+import Trending from "./Trending";
+import BeritaPopuler from "./BeritaPopuler";
 
 const Home = () => {
     const [headline, setHeadline] = useState([])
@@ -52,21 +52,8 @@ const Home = () => {
            <div className="container">
               <Articles articles={headline} loading={isLoading}/>
               <div className="row">
-                 <div className="col-md-8">
-                   <div className="my-3">
-                      <h5 className="text-blue fw-semibold mt-2">Trending</h5>
-                      <div className="my-2">
-                           <ListArticle articles={rowArticle} loading={isLoading}/>
-                      </div>
-                   </div>
-                 </div>
-                 <div className="col-md-4">
-                    <div className="mt-3">
-                      <h5 className="text-blue font-bold">Berita Populer </h5>        
-                      <PopulerArticle populers={populer} loading={isLoading} />
-                      
-                    </div>
-                 </div>
+                 <Trending article={rowArticle} loading={isLoading}/>
+                 <BeritaPopuler article={populer} loading={isLoading}/>
               </div>
            </div>
         </main>
