@@ -4,6 +4,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import api from "../../api/api";
 import Trending from "./Trending";
 import BeritaPopuler from "./BeritaPopuler";
+import dateNow from "../../util/dateNow";
 
 const Home = () => {
     const [headline, setHeadline] = useState([])
@@ -12,14 +13,14 @@ const Home = () => {
     const [isLoading, setLoading] = useState<boolean>(false)
 
     useEffect(() => {
-      function fetchData() {
+      async function fetchData() {
          setLoading(true)
-         api.get(`/everything?q=trending`)
+         await api.get(`/top-news?source-country=us&language=en&date=${dateNow}&api-key=83ed7be80d974aad81ff6638e635dcec`)
          .then((response)=> {
              if(response) {
                setLoading(false)
-               setHeadline(response.data.articles.splice(0,6))
-               setRowArticle(response.data.articles.splice(0,5))
+               setRowArticle(response.data.top_news[0]["news"])
+               setHeadline(response.data.top_news[0]["news"])
              }
          })
          .catch((error) => 
@@ -27,10 +28,10 @@ const Home = () => {
          )
       } 
 
-      function getPopulerData() {
-         api.get('/everything?q=populer')
+      async function getPopulerData() {
+         await api.get(`/search-news?text=popular&language=en&earliest-publish-date=${dateNow}&api-key=83ed7be80d974aad81ff6638e635dcec`)
           .then((response)=> {
-             setPopuler(response.data.articles.splice(1,5))
+             setPopuler(response.data.news)
           })
           .catch((error)=> {
              console.log(error)

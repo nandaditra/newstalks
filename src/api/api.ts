@@ -1,9 +1,9 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: 'https://newsapi.org/v2/',
+  baseURL: 'https://api.worldnewsapi.com',
   headers : {
-    'Authorization': 'Client-ID 082fa67973a5461cad981bea600133b5'
+    'Authorization': 'Client-ID 83ed7be80d974aad81ff6638e635dcec'
   }
 })
 

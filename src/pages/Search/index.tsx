@@ -6,7 +6,7 @@ const Search = () => {
    const { keywordId } = useParams()
    let data:string = keywordId ? keywordId: ""
 
-   const searchArticles = useFetchData(data, 5, 10);
+   const searchArticles = useFetchData(data);
    const {article, loading} = searchArticles
    return (
      <main>

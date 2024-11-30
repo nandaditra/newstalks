@@ -20,7 +20,7 @@ const PopulerArticle = ({populers, loading}:PopulerListProps) =>{
     
     return (
         <div>
-            {populers.map((populer, index)=> (
+            {populers.slice(0,10).map((populer, index)=> (
                 <Link to={populer.url} key={index}className="my-1 text-black text-decoration-none">
                    <div className="row">
                      <div className="col-1 mr-3">
@@ -28,7 +28,7 @@ const PopulerArticle = ({populers, loading}:PopulerListProps) =>{
                      </div>
                      <div className="col-11">
                          <h4 className="fs-6">{populer.title.substring(0,75)}</h4>
-                         <p>{convertDate(populer.publishedAt)}</p>
+                         <p>{convertDate(populer.publish_date)}</p>
                      </div>
                    </div>
                 </Link>

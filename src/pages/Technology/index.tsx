@@ -2,7 +2,7 @@ import ListArticle from "../../components/ListArticle";
 import useFetchData from "../../hook/useFetchData";
 
 const Technology = () => {
-    const technologyArticle = useFetchData("sport", 5, 10)
+    const technologyArticle = useFetchData("sport")
     const {article, loading} = technologyArticle
 
     return (

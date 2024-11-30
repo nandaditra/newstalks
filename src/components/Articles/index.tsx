@@ -2,7 +2,7 @@ import './index.css'
 import { Article } from "./Article";
 import SkeletonArticles from '../Skeleton/SkeletonArticles';
 
-interface ArticleListProps {
+interface ArticleListProps  {
     articles: Article[];
     loading: boolean,
 }
@@ -18,9 +18,9 @@ const Articles = ({ articles, loading}:ArticleListProps) => {
     
     return (
         <div className="row mx-auto">
-              {articles.map((article, index)=>  (
+              {articles.splice(0,6).map((article, index)=>  (
                  <div key={index} className="col-6 col-md-2"> 
-                    <img src={article.urlToImage} className="card-img-top" alt={article.author}/>
+                    <img src={article.image} className="card-img-top" alt={article.author}/>
                     <div className="card-body mt-2">
                        <a href={article.url} className="text-decoration-none"><h6 className="font-title">{article.title.substring(0,60)}...</h6></a>
                     </div>

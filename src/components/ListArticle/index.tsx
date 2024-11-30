@@ -34,21 +34,17 @@ const ListArticle = ({articles, loading}:ListArticleProps) => {
     }  
     return (
         <div className="mx-auto px-1">
-            {articles.map((article, index)=>  {
-                if(article.title !== "[Removed]" && article.description !== null) {
-                    return <Link to={article.url} className="row my-3 text-black text-decoration-none" key={index}>
+            {articles.splice(0,10).map((article, index)=>  
+                    <Link to={article.url} className="row my-3 text-black text-decoration-none" key={index}>
                            <div className="col-11 col-md-3">
-                               <img className="d-block w-100" src={article.urlToImage} alt={article.content}/>
+                               <img className="d-block w-100" src={article.image} alt={article.summary}/>
                            </div>
                            <div className="col-11 col-md-9 px-2">
                                <h5 className="mb-0 fs-5">{article.title}</h5>
-                               <span className="time">{convertDate(article.publishedAt)}</span>
-                               <p className="article-desc">{article.description.substring(0,135)}...</p>
+                               <span className="time">{convertDate(article.publish_date)}</span>
+                               <p className="article-desc">{article.text.substring(0, 135)}...</p>
                            </div>
                     </Link>     
-                }
-                return ""
-              }
             )}
         </div>
       )

@@ -1,11 +1,10 @@
 export class ListArticleModel {
-    id: string | undefined;
-    name: string ="";
-    author: string ="";
-    title: string ="";
-    description: string ="";
-    url: string ="";
-    urlToImage:string ="";
-    publishedAt:string ="";
-    content: string ="";
+    id:number = 0;
+    title:string = "";
+    text:string = "";
+    summary:string = "";
+    url:string = "";
+    image:any;
+    publish_date:string = "";
+    author:string = ""
 }
