@@ -10,6 +10,7 @@ const Home = () => {
     const [headline, setHeadline] = useState([])
     const [populer, setPopuler] = useState([])
     const [rowArticle, setRowArticle] = useState([])
+    const [error, setError] = useState<boolean>(false)
     const [isLoading, setLoading] = useState<boolean>(false)
 
     useEffect(() => {
@@ -23,8 +24,10 @@ const Home = () => {
                setHeadline(response.data.top_news[0]["news"])
              }
          })
-         .catch((error) => 
-            console.error(error)
+         .catch((error) =>  {
+            setError(true)
+            console.log(error)
+           } 
          )
       } 
 
@@ -48,8 +51,8 @@ const Home = () => {
            <div className="container">
               <Articles articles={headline} loading={isLoading}/>
               <div className="row">
-                 <Trending article={rowArticle} loading={isLoading}/>
-                 <BeritaPopuler article={populer} loading={isLoading}/>
+                 <Trending article={rowArticle} loading={isLoading} error={error}/>
+                 <BeritaPopuler article={populer} loading={isLoading} error={error}/>
               </div>
            </div>
         </main>
