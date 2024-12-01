@@ -4,7 +4,6 @@ import "react-loading-skeleton/dist/skeleton.css";
 import api from "../../api/api";
 import Trending from "./Trending";
 import BeritaPopuler from "./BeritaPopuler";
-import dateNow from "../../util/dateNow";
 
 const Home = () => {
     const [headline, setHeadline] = useState([])
@@ -16,12 +15,13 @@ const Home = () => {
     useEffect(() => {
       async function fetchData() {
          setLoading(true)
-         await api.get(`/top-news?source-country=us&language=en&date=${dateNow}&api-key=83ed7be80d974aad81ff6638e635dcec`)
+         await api.get(`/cnn/terbaru`)
          .then((response)=> {
              if(response) {
                setLoading(false)
-               setRowArticle(response.data.top_news[0]["news"])
-               setHeadline(response.data.top_news[0]["news"])
+               setRowArticle(response.data.data.posts)
+               setHeadline(response.data.data.posts)
+               console.log(response.data.data.posts)
              }
          })
          .catch((error) =>  {
@@ -32,9 +32,9 @@ const Home = () => {
       } 
 
       async function getPopulerData() {
-         await api.get(`/search-news?text=popular&language=en&earliest-publish-date=${dateNow}&api-key=83ed7be80d974aad81ff6638e635dcec`)
+         await api.get(`/tempo/dunia`)
           .then((response)=> {
-             setPopuler(response.data.news)
+             setPopuler(response.data.data.posts)
           })
           .catch((error)=> {
              console.log(error)
@@ -44,7 +44,6 @@ const Home = () => {
       fetchData();
       getPopulerData();
     }, [])
-
 
     return (
         <main>

@@ -2,9 +2,8 @@ import ListArticle from "../../components/ListArticle"
 import useFetchData from "../../hook/useFetchData"
 
 const News = () => {
-    const newsArticle = useFetchData("news")
+    const newsArticle = useFetchData("/cnn/terbaru")
     const {article, loading} = newsArticle
-    
     return (
         <main>
             <div className="container">

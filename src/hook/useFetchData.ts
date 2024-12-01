@@ -11,12 +11,11 @@ const useFetchData = (key:string) => {
        async function fetchData() {
           setLoading(true);
           try {
-            await api.get(`/search-news?text=${key}&language=en&earliest-publish-date=${date}&api-key=83ed7be80d974aad81ff6638e635dcec`)
+            await api.get(key)
               .then((response)=> {
                 if(response) {
                   setLoading(false)
-                  setArticle(response.data.news)
-                  console.log(response.data.news)
+                  setArticle(response.data.data.posts)
                 }
           })
           } catch (error) {

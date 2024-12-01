@@ -2,10 +2,10 @@ import Skeleton from "react-loading-skeleton";
 import convertDate from "../../util/convertDate";
 import './index.css'
 import { Link } from "react-router-dom";
-import { ListArticleModel } from "./ListArticleModel";
+import { ArticleModel } from "../../model/ArticleModel/ArticleModel";
 
 interface ListArticleProps {
-    articles:ListArticleModel[]
+    articles:ArticleModel[]
     loading:boolean
 }
 
@@ -35,14 +35,14 @@ const ListArticle = ({articles, loading}:ListArticleProps) => {
     return (
         <div className="mx-auto px-1">
             {articles.splice(0,10).map((article, index)=>  
-                    <Link to={article.url} className="row my-3 text-black text-decoration-none" key={index}>
+                    <Link to={article.link} className="row my-3 text-black text-decoration-none" key={index}>
                            <div className="col-11 col-md-3">
-                               <img className="d-block w-100" src={article.image} alt={article.summary}/>
+                               <img className="d-block w-100" src={article.thumbnail} alt={article.title}/>
                            </div>
                            <div className="col-11 col-md-9 px-2">
                                <h5 className="mb-0 fs-5">{article.title}</h5>
-                               <span className="time">{convertDate(article.publish_date)}</span>
-                               <p className="article-desc">{article.text.substring(0, 135)}...</p>
+                               <span className="time">{convertDate(article.pubDate)}</span>
+                               <p className="article-desc">{article.description.substring(0,135)}...</p>
                            </div>
                     </Link>     
             )}
