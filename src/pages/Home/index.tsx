@@ -21,7 +21,6 @@ const Home = () => {
                setLoading(false)
                setRowArticle(response.data.data.posts)
                setHeadline(response.data.data.posts)
-               console.log(response.data.data.posts)
              }
          })
          .catch((error) =>  {
